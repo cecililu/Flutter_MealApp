@@ -10,9 +10,8 @@ class CatergoryMealSceeen extends StatelessWidget {
     final routeArgs=ModalRoute.of(context)!.settings.arguments as Map <String,String>;   
     return  Scaffold(
          appBar: AppBar(title: Text(routeArgs['title'] as String),),
-        body: ListView.builder(itemBuilder: ((context, index) {
+         body: ListView.builder(itemBuilder: ((context, index) {
           
-
         })));
   }
 }
