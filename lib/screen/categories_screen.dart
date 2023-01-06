@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mealer/category_item.dart';
-import './dummy_data.dart';
+import 'package:mealer/widgets/category_item.dart';
+import '../dummy_data.dart';
 
 class Categories_screen extends StatefulWidget {
 
