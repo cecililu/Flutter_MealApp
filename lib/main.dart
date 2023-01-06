@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           primarySwatch: Colors.green,
           accentColor: Colors.amber,
-          canvasColor: Color.fromARGB(255, 247, 236, 31),
+          canvasColor: Colors.white,
           fontFamily: 'Raleway',
           textTheme: ThemeData.light().textTheme.copyWith(
               bodyText1:
@@ -27,10 +27,11 @@ class MyApp extends StatelessWidget {
                   fontFamily: 'RobotoCondensed',
                   fontSize: 20,
                   fontWeight: FontWeight.w300))),
-      home: const Categories_screen(),
-      
+    
+      initialRoute: '/',
       routes: {
-        '/category-meals':(ctx)=>CatergoryMealSceeen(categoryId: categoryId, categorytitle: categorytitle)
+        '/':(context) => Categories_screen(),
+        CatergoryMealSceeen.routeName as String:(ctx)=>const CatergoryMealSceeen()
       },
 
     );

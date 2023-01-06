@@ -3,22 +3,25 @@ import 'package:mealer/category_item.dart';
 import './dummy_data.dart';
 
 class Categories_screen extends StatefulWidget {
+
+  
   const Categories_screen({super.key});
 
   @override
   State<Categories_screen> createState() => _Categories_screenState();
+
 }
 
 class _Categories_screenState extends State<Categories_screen> {
-  @override
+ 
+  @override  
   Widget build(BuildContext context) {
     return Scaffold(
         drawerEnableOpenDragGesture: false,
         drawer: Drawer(),
         appBar: AppBar(
-          title: Text(
-            'Meal App',
-            style: TextStyle(fontFamily: 'Raleway', fontSize: 20),
+          title: const Text('Meal App',
+          style: TextStyle(fontFamily: 'Raleway', fontSize: 20),
           ),
         ),
         body: GridView(
