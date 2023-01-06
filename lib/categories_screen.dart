@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mealer/category_item.dart';
+import './dummy_data.dart';
 
 class Categories_screen extends StatefulWidget {
   const Categories_screen({super.key});
@@ -16,9 +18,10 @@ class _Categories_screenState extends State<Categories_screen> {
           childAspectRatio: 3 / 2,
           crossAxisSpacing: 20,
           mainAxisSpacing: 20),
-      children: [
-         
-      ],
+      children: Dummy.map((categoryData) {
+        return Categoryitem(
+            title: categoryData.title, color: categoryData.color);
+      }).toList(),
     );
   }
 }

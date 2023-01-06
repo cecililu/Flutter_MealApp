@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mealer/categories_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -73,6 +74,8 @@ class _MyHomePageState extends State<MyHomePage> {
       title: Center(
         child: Text(widget.title),
       ),
-    ));
+    ),
+    body: Categories_screen(),
+    );
   }
 }
