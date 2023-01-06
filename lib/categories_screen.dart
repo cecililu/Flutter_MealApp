@@ -12,7 +12,11 @@ class Categories_screen extends StatefulWidget {
 class _Categories_screenState extends State<Categories_screen> {
   @override
   Widget build(BuildContext context) {
-    return GridView(
+    return Scaffold(
+       drawerEnableOpenDragGesture: false,
+      drawer: Drawer(),
+      appBar: AppBar(title:Center(child: Text('Meal App'),)),
+      body:GridView(
       gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 200,
           childAspectRatio: 3 / 2,
@@ -22,6 +26,6 @@ class _Categories_screenState extends State<Categories_screen> {
         return Categoryitem(
             title: categoryData.title, color: categoryData.color);
       }).toList(),
-    );
+    ));
   }
 }
