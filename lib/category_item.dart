@@ -12,11 +12,9 @@ class Categoryitem extends StatelessWidget {
   
 
 void selectCategory(context){
-      Navigator.of(context).push(MaterialPageRoute(builder: (_){
-         return CatergoryMealSceeen(categoryId:id,categorytitle:title);
-      }));
-      
+      Navigator.of(context).pushNamed('/category-meals', arguments:{"id":id,"title":title} );    
   }  
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
