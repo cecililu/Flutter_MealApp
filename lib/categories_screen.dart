@@ -29,7 +29,7 @@ class _Categories_screenState extends State<Categories_screen> {
               crossAxisSpacing: 20,
               mainAxisSpacing: 20),
           children: Dummy.map((categoryData) {
-            return Categoryitem(
+            return Categoryitem(id:categoryData.id,
                 title: categoryData.title, color: categoryData.color);
           }).toList(),
         ));

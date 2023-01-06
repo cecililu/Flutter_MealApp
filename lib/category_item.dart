@@ -4,17 +4,19 @@ import 'package:flutter/material.dart';
 import 'package:mealer/category_meal_screens.dart';
 
 class Categoryitem extends StatelessWidget {
+  
+  final String id;
   final Color color;
   final String title;
-  const Categoryitem({super.key, required this.title, required this.color});
+  const Categoryitem({super.key, required this.title, required this.color, required this.id});
   
-  void selectCategory(context){
+
+void selectCategory(context){
       Navigator.of(context).push(MaterialPageRoute(builder: (_){
-         return CatergoryMealSceeen();
+         return CatergoryMealSceeen(categoryId:id,categorytitle:title);
       }));
       
-  }
-
+  }  
   @override
   Widget build(BuildContext context) {
     return InkWell(
