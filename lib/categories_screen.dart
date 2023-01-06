@@ -13,19 +13,25 @@ class _Categories_screenState extends State<Categories_screen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       drawerEnableOpenDragGesture: false,
-      drawer: Drawer(),
-      appBar: AppBar(title:Center(child: Text('Meal App'),)),
-      body:GridView(
-      gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-          maxCrossAxisExtent: 200,
-          childAspectRatio: 3 / 2,
-          crossAxisSpacing: 20,
-          mainAxisSpacing: 20),
-      children: Dummy.map((categoryData) {
-        return Categoryitem(
-            title: categoryData.title, color: categoryData.color);
-      }).toList(),
-    ));
+        drawerEnableOpenDragGesture: false,
+        drawer: Drawer(),
+        appBar: AppBar(
+          title: Text(
+            'Meal App',
+            style: TextStyle(fontFamily: 'Raleway', fontSize: 20),
+          ),
+        ),
+        body: GridView(
+          padding: const EdgeInsets.all(25),
+          gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+              maxCrossAxisExtent: 200,
+              childAspectRatio: 3 / 2,
+              crossAxisSpacing: 20,
+              mainAxisSpacing: 20),
+          children: Dummy.map((categoryData) {
+            return Categoryitem(
+                title: categoryData.title, color: categoryData.color);
+          }).toList(),
+        ));
   }
 }

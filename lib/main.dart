@@ -8,14 +8,24 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Meal App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+          primarySwatch: Colors.green,
+          accentColor: Colors.amber,
+          canvasColor: Color.fromARGB(255, 247, 236, 31),
+          fontFamily: 'Raleway',
+          textTheme: ThemeData.light().textTheme.copyWith(
+              bodyText1:
+                  const TextStyle(color: Color.fromARGB(255, 82, 80, 80)),
+              bodyText2:
+                  const TextStyle(color: Color.fromARGB(255, 82, 80, 80)),
+              headline1: const TextStyle(
+                  fontFamily: 'RobotoCondensed',
+                  fontSize: 20,
+                  fontWeight: FontWeight.w300))),
       home: const Categories_screen(),
     );
   }
