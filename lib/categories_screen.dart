@@ -11,13 +11,13 @@ class _Categories_screenState extends State<Categories_screen> {
   @override
   Widget build(BuildContext context) {
     return GridView(
-      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+      gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 200,
           childAspectRatio: 3 / 2,
           crossAxisSpacing: 20,
           mainAxisSpacing: 20),
       children: [
-        Text('Grid'),
+         
       ],
     );
   }
