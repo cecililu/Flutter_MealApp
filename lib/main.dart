@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mealer/screen/categories_screen.dart';
 import 'package:mealer/screen/category_meal_screens.dart';
+import 'package:mealer/screen/error_screen.dart';
 import 'package:mealer/screen/meal_detail_screen.dart';
 
 void main() {
@@ -30,14 +31,20 @@ class MyApp extends StatelessWidget {
                   fontWeight: FontWeight.w300))),
     
       initialRoute: '/',
-      routes: {
+      routes: { 
         '/':(context) => Categories_screen(),
         CatergoryMealSceeen.routeName as String:(ctx)=>const CatergoryMealSceeen(),
         MealDetailScreen.routeName:(context)=> MealDetailScreen()
       },
-       onGenerateRoute: (settings) {
+      onGenerateRoute: (settings) {
          return MaterialPageRoute(builder: (context) {
             return Categories_screen();
+         },); 
+       },
+
+       onUnknownRoute: (settings) {
+         return MaterialPageRoute(builder: (context) {
+            return ErrorPage();
          },); 
        },
     );
