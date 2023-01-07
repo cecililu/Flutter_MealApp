@@ -12,44 +12,83 @@ class MealDetailScreen extends StatelessWidget {
     final thismeal = DUMMY_MEALS.firstWhere((meal) => meal.id == mealId);
 
     return Scaffold(
-        appBar: AppBar(
-          title: Text(thismeal.title),
-        ),
-        body: Column(
-          children: [
-            Container(
-              height: 300,
-              width: double.infinity,
-              child: Image.network(
-                thismeal.imageUrl,
-                fit: BoxFit.cover,
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.symmetric(vertical: 10),
-                child: Text('Ingredients',
-                    style: Theme.of(context).textTheme.headline1)
-                    ),
+      appBar: AppBar(
+        title: Text(thismeal.title),
+      ),
+      body: SingleChildScrollView(
+        child: Container(
+          color: Colors.green[400],
+          child: Column(
+            children: [
               Container(
-                decoration: BoxDecoration(color:Colors.white,border: Border.all(color: Colors.grey),borderRadius: BorderRadius.circular(15)),
-                height: 200,
-                width: 350,
-                margin: EdgeInsets.all(5),
-                padding: EdgeInsets.all(1),
-                child: ListView.builder(itemBuilder: (ctx,ind){
-                  return Card(
-                    margin:EdgeInsets.all(10) ,
-                    elevation: 10,
-                    color: Colors.green[500],
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 5),
-                      child: 
-                        Text(thismeal.ingredients[ind]),
-                      
-                    ),
-                  );
-                },itemCount: thismeal.ingredients.length,))
-          ],
-        ));
+                height: 300,
+                width: double.infinity,
+                child: Image.network(
+                  thismeal.imageUrl,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Container(
+                  margin: EdgeInsets.symmetric(vertical: 10),
+                  child: Text('Ingredients',
+                      style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontSize: 15,
+                          color: Colors.white))),
+              Container(
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      border: Border.all(color: Colors.grey),
+                      borderRadius: BorderRadius.circular(15)),
+                  height: 150,
+                  width: 350,
+                  margin: EdgeInsets.all(5),
+                  padding: EdgeInsets.all(1),
+                  child: ListView.builder(
+                    itemBuilder: (ctx, ind) {
+                      return ListTile(
+                        leading: CircleAvatar(
+                            child: Text((ind + 1).toString(),
+                                style: TextStyle(fontSize: 15)),
+                            radius: 12),
+                        title: Text(thismeal.ingredients[ind]),
+                      );
+                    },
+                    itemCount: thismeal.ingredients.length,
+                  )),
+              Container(
+                margin: EdgeInsets.symmetric(vertical: 10),
+                child: Text('Steps',
+                    style: TextStyle(
+                        fontWeight: FontWeight.w700,
+                        fontSize: 15,
+                        color: Colors.white)),
+              ),
+              Container(
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      border: Border.all(color: Colors.grey),
+                      borderRadius: BorderRadius.circular(15)),
+                  height: 150,
+                  width: 350,
+                  margin: EdgeInsets.all(5),
+                  padding: EdgeInsets.all(1),
+                  child: ListView.builder(
+                    itemBuilder: (ctx, ind) {
+                      return ListTile(
+                        leading: CircleAvatar(
+                            child: Text((ind + 1).toString(),
+                                style: TextStyle(fontSize: 15)),
+                            radius: 12),
+                        title: Text(thismeal.steps[ind]),
+                      );
+                    },
+                    itemCount: thismeal.steps.length,
+                  ))
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
