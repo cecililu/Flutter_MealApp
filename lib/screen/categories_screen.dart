@@ -16,15 +16,7 @@ class _Categories_screenState extends State<Categories_screen> {
  
   @override  
   Widget build(BuildContext context) {
-    return Scaffold(
-        drawerEnableOpenDragGesture: false,
-        drawer: Drawer(),
-        appBar: AppBar(
-          title: const Text('Meal App',
-          style: TextStyle(fontFamily: 'Raleway', fontSize: 20),
-          ),
-        ),
-        body: GridView(
+    return GridView(
           padding: const EdgeInsets.all(25),
           gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
               maxCrossAxisExtent: 200,
@@ -35,6 +27,6 @@ class _Categories_screenState extends State<Categories_screen> {
             return Categoryitem(id:categoryData.id,
                 title: categoryData.title, color: categoryData.color);
           }).toList(),
-        ));
+        );
   }
 }
