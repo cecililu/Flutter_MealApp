@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:mealer/models/meal.dart';
+import 'package:mealer/screen/meal_detail_screen.dart';
 
 class MealItem extends StatelessWidget {
+  final String id;
   final String title;
   final String imageUrl;
   final int duration;
@@ -16,8 +18,14 @@ class MealItem extends StatelessWidget {
       required this.imageUrl,
       required this.duration,
       required this.complexity,
-      required this.affordibility});
-  void selectMeal() {}
+      required this.affordibility,required this.id});
+  
+  
+  void selectMeal(context) {
+    Navigator.of(context).pushNamed(MealDetailScreen.routeName,arguments: id);
+  }
+
+
   String get complexityText{
    
    switch(complexity){
@@ -59,7 +67,7 @@ class MealItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: selectMeal,
+      onTap: ()=>selectMeal(context),
       child: Card(
         elevation: 7,
         margin: const EdgeInsets.all(10),
@@ -69,7 +77,7 @@ class MealItem extends StatelessWidget {
             Stack(
               children: [
                 ClipRRect(
-                  borderRadius: BorderRadius.only(
+                  borderRadius:const  BorderRadius.only(
                       topLeft: Radius.circular(12),
                       topRight: Radius.circular(12)),
                   child: Image.network(
@@ -81,8 +89,7 @@ class MealItem extends StatelessWidget {
                 ),
                 Positioned(
                   bottom: 20,
-                  right: 10,
-                  
+                  right: 10,    
                   child: Container(
                     padding: EdgeInsets.all(8),
                     color: Colors.black54,
