@@ -1,6 +1,5 @@
 {
     "yaml.schemas": {
-        "file:///c%3A/Users/msi/.vscode/extensions/docsmsft.docs-yaml-0.2.9/out/yaml-support/toc.schema.json": "/toc\\.yml/i",
         "https://json.schemastore.org/pubspec.json": "file:///c%3A/Users/msi/Documents/development/projects/mealer/pubspec.yaml"
     }
 }

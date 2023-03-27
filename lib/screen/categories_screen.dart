@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mealer/widgets/category_item.dart';
 import '../dummy_data.dart';
 
-class Categories_screen extends StatefulWidget {
-
-  
+class Categories_screen extends StatefulWidget { 
   const Categories_screen({super.key});
 
   @override
@@ -13,7 +11,6 @@ class Categories_screen extends StatefulWidget {
 }
 
 class _Categories_screenState extends State<Categories_screen> {
- 
   @override  
   Widget build(BuildContext context) {
     return GridView(

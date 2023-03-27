@@ -19,12 +19,12 @@ void selectCategory(context){
   Widget build(BuildContext context) {
     return InkWell(
       onTap: ()=>selectCategory(context),
-      splashColor: Colors.red,
-      borderRadius: BorderRadius.circular(15),
+      splashColor: Colors.amberAccent,
+      borderRadius: BorderRadius.circular(10),
       child:
         Container(    
             padding: const EdgeInsets.all(15),
-            child: Text(title,style:Theme.of(context).textTheme.headline1,),
+            child: Text(title+'s',style:Theme.of(context).textTheme.headline1,),
             decoration: BoxDecoration(
               gradient: LinearGradient(
                   colors: [color.withOpacity(0.7), color],

@@ -3,7 +3,6 @@ import 'package:mealer/dummy_data.dart';
 
 class MealDetailScreen extends StatelessWidget {
   static const routeName = '/meal-detail';
-
   MealDetailScreen({super.key});
 
   @override
@@ -12,7 +11,9 @@ class MealDetailScreen extends StatelessWidget {
 
     final thismeal = DUMMY_MEALS.firstWhere((meal) => meal.id == mealId);
     
-    return  SingleChildScrollView(
+    return 
+    Scaffold(body: 
+     SingleChildScrollView(
         child: Container(
           color: Colors.green[400],
           child: Column(
@@ -85,7 +86,7 @@ class MealDetailScreen extends StatelessWidget {
             ],
           ),
         ),
-      );
-    
+      )
+    );
   }
 }

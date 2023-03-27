@@ -35,15 +35,19 @@ Categories_screen(),FavouriteScreen()
              ),   
       body: _pages[_selectedPageIndex],
       bottomNavigationBar:BottomNavigationBar(
+
         onTap: _selectPage,
-        backgroundColor: Colors.red,
+        // showSelectedLabels: false,
+      // selectedItemColor:Colors.white ,
+        currentIndex: _selectedPageIndex,
         items: const[
-            BottomNavigationBarItem(
+          BottomNavigationBarItem(
               icon: Icon(Icons.category),
+              backgroundColor: Colors.green,
               label: "Main"
               ),
          BottomNavigationBarItem(
-          icon: Icon(Icons.star),
+          icon: Icon(Icons.star,),backgroundColor: Colors.green,
           label: "Favourite"
           ),
         ]
